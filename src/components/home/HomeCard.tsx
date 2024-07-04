@@ -8,7 +8,7 @@ function HomeCard(): JSX.Element {
   const theme = useSelector((state: any) => state.theme);
 
   return (
-    <div className="p-[1rem] h-screen w-full">
+    <div className={`p-[1rem] h-screen w-full ${theme.isToggle ? "bg-[url('../../public/images/homeBackgroundPurple.png')]" : "bg-[url('../../public/images/homeBackgroundBlue.png')]"} bg-no-repeat bg-cover`}>
       <div className="bg-transparent/5 rounded-[1rem] p-[1rem] w-[90%]">
         <p className="md:text-[5rem] text-[2rem]" style={{ color: `${theme.icon}`}}>
           Développeuse Front-end

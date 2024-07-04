@@ -1,4 +1,5 @@
 export interface IThemeState {
+    isToggle: boolean;
     backgroundColor: string;
     icon: string;
     backgroundSidebar: string;

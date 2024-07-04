@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { IThemeState } from '../utils/types';
 
 const initialState: IThemeState = {
+ isToggle: false,
  backgroundColor: "bg-[#F4F2F3]",
  icon: "#FFA101",
  backgroundSidebar: "bg-[#B3DEE5]",
@@ -16,6 +17,7 @@ export const themeSlice = createSlice({
  initialState,
  reducers: {
    switchTheme: (state, action) => {
+    state.isToggle = action.payload;
     state.backgroundColor = !action.payload ? "bg-[#F4F2F3]" : "bg-[#191919]";
     state.backgroundSidebar = !action.payload ? "bg-[#B3DEE5]" : "bg-[#5F264A]";
     state.icon = !action.payload ? "#FFA101" : "#D4ADFC";

@@ -7,12 +7,12 @@ import { LightIcon } from "../../assets/svgComponents";
     const dispatch = useDispatch();
     const theme = useSelector((state: any) => state.theme);
 
-    const [isToggle, setIsToggle] = useState<boolean>(true);
+    const [isToggle, setIsToggle] = useState<boolean>(false);
 
 
     const handleClick = () => {
       setIsToggle(!isToggle);
-      dispatch(switchTheme(isToggle));
+      dispatch(switchTheme(!isToggle));
     };
 
     return (
