@@ -24,7 +24,7 @@ export const sidebarBottomLinks = (): ISidebarLink[] => [
     {
       icon: <LinkedinIcon />,
       name: 'linkedin',
-      link: 'www.linkedin.com/in/charlie-boudou-7a8a051b7',
+      link: 'https://www.linkedin.com/in/charlie-boudou-7a8a051b7',
     },
     {
       icon: <GitIcon />,

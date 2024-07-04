@@ -11,7 +11,7 @@ function Layout({ children }: ILayoutProps): JSX.Element {
   const theme = useSelector((state: any) => state.theme); 
 
   return (
-    <div className="md:flex w-full h-full">
+    <div className={`md:flex w-full h-full ${theme.backgroundColor}`}>
         <Sidebar />
         <div 
             className={`${theme.backgroundColor} h-full w-full`}
