@@ -27,14 +27,15 @@ interface IButtonProps {
     return (
     
             <div
-                className={`${theme.backgroundSidebar} rounded-[.5rem] w-fit px-[1rem] py-[.5rem] cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300`}
+                className="rounded-[.5rem] w-fit px-[1rem] py-[.5rem] cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                style={{ backgroundColor: `${theme.icon}`}}
             >
                 {link.page ? (
                     <Link to={link.link} onClick={() => handleClick(link.page ? link.page : '')}>
-                        <p className="text-[1rem] font-bold" style={{color: `${theme.icon}`}}>{link.name}</p>
+                        <p className="text-[1rem] font-bold" style={{color: `${theme.activeIcon}`}}>{link.name}</p>
                     </Link>
                 ) : (
-                    <div className="text-[1rem] font-bold" style={{color: `${theme.icon}`}} onClick={handleScrollToAbout}>
+                    <div className="text-[1rem] font-bold" style={{color: `${theme.activeIcon}`}} onClick={handleScrollToAbout}>
                         {link.name}
                     </div>
                 )}
