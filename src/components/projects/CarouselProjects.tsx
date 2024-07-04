@@ -16,9 +16,9 @@ function CarouselProjects({ cards }: ICarouselProjectsProps) {
     const [card] = useState(table);
 
     return (
-        <div className="w-full p-[3rem] h-screen flex items-center">
+        <div className="w-full md:p-[3rem] h-screen flex items-center">
             <div
-                className={`w-[80%] mx-auto`}
+                className={`md:w-[80%] mx-auto w-full`}
             >
                 <Carousel
                     slides={card}
