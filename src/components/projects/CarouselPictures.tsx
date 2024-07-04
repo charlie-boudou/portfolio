@@ -67,7 +67,7 @@ function CarouselPictures({ pictures, video }: ICarouselPicturesProps): JSX.Elem
           ))}
           {video !== '' && (
             <video
-              className="object-fill rounded-[1rem] w-[10rem] h-[10rem] cursor-pointer border-[.2rem] border-black transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+              className="object-fill rounded-[1rem] w-[5rem] h-[5rem] md:w-[10rem] md:h-[10rem] cursor-pointer border-[.2rem] border-black transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
               controls
               muted
               onClick={() => {

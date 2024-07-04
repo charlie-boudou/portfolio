@@ -36,7 +36,7 @@ function ProjectCard({ infos, setShowCard, setProjectInfos }: IProjectCardProps)
         />
         <h2 className="mt-[1rem] text-[2.5rem] font-bold text-center" style={{color: `${theme.icon}`}}>{infos.name}</h2>
         <StackInfos stacks={infos.stacks} isCard />
-        <div className="w-full flex items-center justify-end">
+        <div className="w-full flex items-center justify-end mt-[.5rem] md:mt-0">
             <ProjectButton title="VOIR LE PROJET" infos={infos} setShowCard={setShowCard} setProjectInfos={setProjectInfos} />
         </div>
         </animated.div>
