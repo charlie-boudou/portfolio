@@ -10,7 +10,7 @@ function Contact(): JSX.Element {
   return (
     <div className={`p-[1rem] h-screen md:h-full w-full flex flex-col items-center`}>
       <div
-        className={`md:px-[3rem] md:py-[3rem] pb-[1rem] w-[90%] m-auto text-center border-[.2rem] rounded-[1rem]`}
+        className={`md:px-[3rem] md:py-[3rem] pb-[1rem] w-[90%] m-auto mb-[2rem] text-center border-[.2rem] rounded-[1rem]`}
         style={{borderColor: `${theme.icon}`}}
       >
         <div className="md:text-[2rem] md:w-[90%] md:m-auto text-justify p-[1rem]" style={{ color: `${theme.activeIcon}`}}>
