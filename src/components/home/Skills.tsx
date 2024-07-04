@@ -32,7 +32,7 @@ function Skills({ showSkillsCard }: ISkillsProps): JSX.Element {
                     <HandRight fill={theme.icon} className="w-[1.5rem] h-[1.5rem]" />
                     <p className="text-[1.5rem] font-bold" style={{ color: `${theme.activeIcon}` }}>{item.name}</p>
                 </div>
-                <div className="flex md:flex-row flex-col md:space-x-[1rem] space-y-[1rem] md:justify-between w-full flex-wrap">
+                <div className="flex md:flex-row flex-col md:space-x-[1rem] md:space-y-0 space-y-[1rem] md:justify-between w-full flex-wrap md:items-start md:flex-nowrap">
                     {item.description.map((el: IAbout | ITechnicalSkills) => {
                         if ('list' in el) {
                         return (

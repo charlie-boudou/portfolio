@@ -21,7 +21,7 @@ function About(): JSX.Element {
   }, [showSkillsCard]);
   
   return (
-    <div id="about" className="h-full w-full py-[2rem]">
+    <div id="about" className="h-full w-full py-[1rem]">
       <div className={`w-[90%] m-auto ${theme.backgroundSidebar} p-[1rem] ${!showSkillsCard ? 'rounded-[1rem]' : 'rounded-t-[1rem]'}`}>
         <div className="w-full flex md:flex-row flex-col items-start md:space-x-[1.5rem]">
             <img
@@ -29,17 +29,17 @@ function About(): JSX.Element {
               className="rounded-[1rem] md:w-[50%] w-full"
               alt="Me"
             />
-            <div className={`md:w-[50%] w-full p-[1rem] flex flex-col justify-between`}>
+            <div className={`md:w-[50%] w-full p-[.5rem] flex flex-col justify-between`}>
               {about.map((item: IAbout) => {
                 if(item.name !== 'why') {
                   return (
-                    <div key={v4()} className={`text-[1.5rem] ${theme.textColor} md:text-justify pb-[1.5rem]`}>
+                    <div key={v4()} className={`text-[1.5rem] ${theme.textColor} md:text-justify pb-[1rem]`}>
                       {item.description}
                     </div>
                   )
                 }
               })}
-              <div className="w-full flex items-center justify-end pt-[3rem]">
+              <div className="w-full flex items-center justify-end pt-[1rem]">
                 <ProjectButton title="MES COMPÉTENCES" setShowCard={setShowSkillsCard} />
               </div>
             </div>
