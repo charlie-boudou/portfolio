@@ -11,6 +11,8 @@ import { ReactComponent as HandRight } from './hand-right.svg';
 import { ReactComponent as SpinnerDot } from './spinner-dots.svg';
 import { ReactComponent as Dot } from './point.svg';
 import { ReactComponent as CodeSquare } from './code-square.svg';
+import { ReactComponent as France } from './france.svg';
+import { ReactComponent as Uk } from './uk.svg';
 
 export {
   LightIcon,
@@ -25,6 +27,8 @@ export {
   HandRight,
   SpinnerDot,
   Dot,
-  CodeSquare
+  CodeSquare,
+  France,
+  Uk
 };
 

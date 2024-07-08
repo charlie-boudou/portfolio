@@ -4,12 +4,14 @@ import { skills } from "../../utils/datas";
 import { IAbout, ISkills, ITechnicalSkills } from '../../utils/types';
 import { HandRight, Dot } from "../../assets/svgComponents";
 import { v4 } from "uuid";
+import { useTranslation } from 'react-i18next';
 
 interface ISkillsProps {
     showSkillsCard: boolean;
 }
 
 function Skills({ showSkillsCard }: ISkillsProps): JSX.Element {
+  const { t } = useTranslation();
   const theme = useSelector((state: any) => state.theme);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ function Skills({ showSkillsCard }: ISkillsProps): JSX.Element {
 
   return ( 
     <div className={`w-[90%] m-auto ${theme.backgroundSidebar} rounded-b-[1rem] p-[1rem]`}>
-        {skills.map((item: ISkills) => (
+        {skills(t).map((item: ISkills) => (
             <div key={v4()} className="flex flex-col space-y-[1rem] pb-[2rem]">
                 <div className="flex items-center space-x-[.5rem] skill-item w-full">
                     <HandRight fill={theme.icon} className="w-[1.5rem] h-[1.5rem]" />

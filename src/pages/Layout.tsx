@@ -3,6 +3,7 @@ import { Sidebar } from "../components/sidebar/Sidebar";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Logo } from "../components/Logo";
+import { LanguageSwitch } from "../components/sidebar/LanguageSwitch";
 
 interface ILayoutProps {
   children: JSX.Element;
@@ -23,6 +24,9 @@ function Layout({ children }: ILayoutProps): JSX.Element {
               </Link>
             </div>
             <div>{children}</div>
+            <div className="md:hidden block w-full p-[1rem] md:p-0 flex items-center justify-end">
+              <LanguageSwitch />
+            </div>
         </div>
     </div>
   );

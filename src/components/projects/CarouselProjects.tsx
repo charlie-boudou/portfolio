@@ -24,7 +24,7 @@ function CarouselProjects({ cards }: ICarouselProjectsProps) {
                     slides={card}
                     goToSlide={goToSlide}
                     offsetRadius={1}
-                    showNavigation={false}
+                    showNavigation={true}
                     animationConfig={config.gentle}
                 />
             </div>

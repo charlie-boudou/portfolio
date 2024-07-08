@@ -5,9 +5,12 @@ import { Skills } from "./Skills";
 import { about } from "../../utils/datas";
 import { IAbout } from '../../utils/types';
 import { v4 } from "uuid";
+import { useTranslation } from 'react-i18next';
 
 function About(): JSX.Element {
+  const { t } = useTranslation();
   const theme = useSelector((state: any) => state.theme);
+
   const skillsCardRef = useRef<HTMLDivElement>(null);
 
   const [showSkillsCard, setShowSkillsCard] = useState<boolean>(false);
@@ -30,7 +33,7 @@ function About(): JSX.Element {
               alt="Me"
             />
             <div className={`md:w-[50%] w-full p-[.5rem] flex flex-col justify-between`}>
-              {about.map((item: IAbout) => {
+              {about(t).map((item: IAbout) => {
                 if(item.name !== 'why') {
                   return (
                     <div key={v4()} className={`text-[1.5rem] ${theme.textColor} md:text-justify pb-[1rem]`}>
@@ -40,7 +43,7 @@ function About(): JSX.Element {
                 }
               })}
               <div className="w-full flex items-center justify-end pt-[1rem]">
-                <ProjectButton title="MES COMPÉTENCES" setShowCard={setShowSkillsCard} />
+                <ProjectButton title={t('skills')} setShowCard={setShowSkillsCard} />
               </div>
             </div>
         </div>

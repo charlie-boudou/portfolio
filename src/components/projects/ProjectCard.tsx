@@ -4,6 +4,7 @@ import { useSpring, animated } from "react-spring";
 import { ProjectButton } from "./ProjectButton";
 import { IProjectsInfos } from "../../utils/types";
 import { StackInfos } from "./StacksInfos";
+import { useTranslation } from 'react-i18next';
 
 interface IProjectCardProps {
     infos: IProjectsInfos;
@@ -12,6 +13,7 @@ interface IProjectCardProps {
 }
 
 function ProjectCard({ infos, setShowCard, setProjectInfos }: IProjectCardProps) {
+    const { t } = useTranslation();
     const theme = useSelector((state: any) => state.theme);
 
     const [show, setShown] = useState<boolean>(false);
@@ -25,7 +27,7 @@ function ProjectCard({ infos, setShowCard, setProjectInfos }: IProjectCardProps)
 
     return (
         <animated.div
-            className={`${theme.backgroundSidebar} flex flex-col justify-center px-[2rem] pb-[2rem] rounded-[.5rem]`}
+            className={`w-full ${theme.backgroundSidebar} flex flex-col justify-center px-[2rem] pb-[2rem] rounded-[.5rem]`}
             style={styles}
             onMouseEnter={() => setShown(true)}
             onMouseLeave={() => setShown(false)}
@@ -34,10 +36,10 @@ function ProjectCard({ infos, setShowCard, setProjectInfos }: IProjectCardProps)
             className="mt-[-20%] w-full rounded-[1.5rem]"
             src={infos.pictures[0]} alt={infos.name} 
         />
-        <h2 className="mt-[1rem] text-[2.5rem] font-bold text-center" style={{color: `${theme.icon}`}}>{infos.name}</h2>
+        <h2 className="mt-[1rem] text-[1.5rem] md:text-[2.5rem] font-bold text-center" style={{color: `${theme.icon}`}}>{infos.name}</h2>
         <StackInfos stacks={infos.stacks} isCard />
         <div className="w-full flex items-center justify-end mt-[.5rem] md:mt-0">
-            <ProjectButton title="VOIR LE PROJET" infos={infos} setShowCard={setShowCard} setProjectInfos={setProjectInfos} />
+            <ProjectButton title={t('seeProject')} infos={infos} setShowCard={setShowCard} setProjectInfos={setProjectInfos} />
         </div>
         </animated.div>
     );

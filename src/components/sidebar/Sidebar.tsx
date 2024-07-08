@@ -3,7 +3,8 @@ import { sidebarLinks, sidebarBottomLinks } from '../../utils/datas';
 import { useSelector } from 'react-redux';
 import { ISidebarLink } from "../../utils/types";
 import { LinkButton } from "./LinkButton";
-import {ButtonTheme } from "./ButtonTheme";
+import { ButtonTheme } from "./ButtonTheme";
+import { LanguageSwitch } from "./LanguageSwitch";
 
 function Sidebar(): JSX.Element {
   const { theme } = useSelector((state: any) => ({ theme: state.theme }));
@@ -15,18 +16,21 @@ function Sidebar(): JSX.Element {
     >
       <ButtonTheme/>
       <div className="flex md:flex-col items-center space-x-[1rem] md:space-y-[1rem] md:space-x-0">
-        {sidebarLinks().map((navLink: ISidebarLink) => (
+        {sidebarLinks.map((navLink: ISidebarLink) => (
           <div key={navLink.name}>
             <LinkButton navLink={navLink} />
           </div>
         ))}
       </div>
       <div className="flex md:flex-col items-center space-x-[.5rem] md:space-y-[1rem] md:space-x-0">
-        {sidebarBottomLinks().map((navLink: ISidebarLink) => (
+        {sidebarBottomLinks.map((navLink: ISidebarLink) => (
           <div key={navLink.name}>
             <LinkButton navLink={navLink} />
           </div>
         ))}
+        <div className="hidden md:block">
+          <LanguageSwitch />
+        </div>
       </div>
     </div>
   );

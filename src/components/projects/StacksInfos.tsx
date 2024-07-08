@@ -11,7 +11,7 @@ function StackInfos({ stacks, isCard }: IStackInfosProps): JSX.Element {
 
   return (
     <>
-        <p className={`${isCard ? 'mt-[1.5rem] mb-[1rem] text-[1.5rem]' : 'text-[2rem]'} font-bold`} style={{color: `${theme.activeIcon}`}}>
+        <p className={`${isCard ? 'mt-[1.5rem] mb-[1rem] text-[1rem] md:text-[1.5rem]' : 'text-[2rem]'} font-bold`} style={{color: `${theme.activeIcon}`}}>
             STACKS:
         </p>
         <div className={`${isCard ? 'flex-col space-y-[1rem]' : 'items-center space-x-[1rem]'} flex`}>
