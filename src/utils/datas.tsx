@@ -146,7 +146,7 @@ export const skills = (t: TFunction): ISkills[] => [
                 list: [
                     t('scrum'),
                     'RESPONSIVE DESIGN',
-                    t('acessWeb'),
+                    t('accessWeb'),
                 ]
             },
         ],
