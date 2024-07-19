@@ -69,7 +69,7 @@ export const projectsInfos= (t: TFunction):  IProjectsInfos[] => [
         name: 'Villa Calm', 
         description: t('villacalm'), 
         stacks: [ 'REACT', 'TYPESCRIPT', 'NODE JS'],
-        pictures: ['images/villacalm.png', 'images/villacalm1.png', 'images/villacalm2.png', 'images/villacalm3.png', 'images/villacalm4.png'],
+        pictures: ['images/villacalm.png', 'images/villacalm1.png', 'images/villacalm2.png', 'images/villacalm4.png'],
         video: 'images/villacalm.mp4',
         link: 'https://villa-calm.vercel.app/'
     },
