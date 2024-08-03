@@ -1,13 +1,13 @@
 import React from "react";
 import { sidebarLinks, sidebarBottomLinks } from '../../utils/datas';
 import { useSelector } from 'react-redux';
-import { ISidebarLink } from "../../utils/types";
+import { IRootState, ISidebarLink } from "../../utils/types";
 import { LinkButton } from "./LinkButton";
 import { ButtonTheme } from "./ButtonTheme";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 function Sidebar(): JSX.Element {
-  const { theme } = useSelector((state: any) => ({ theme: state.theme }));
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   return (
     <div

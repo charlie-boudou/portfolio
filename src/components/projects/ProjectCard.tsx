@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { useSelector } from 'react-redux';
 import { useSpring, animated } from "react-spring";
 import { ProjectButton } from "./ProjectButton";
-import { IProjectsInfos } from "../../utils/types";
+import { IProjectsInfos, IRootState } from "../../utils/types";
 import { StackInfos } from "./StacksInfos";
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ interface IProjectCardProps {
 
 function ProjectCard({ infos, setShowCard, setProjectInfos }: IProjectCardProps) {
     const { t } = useTranslation();
-    const theme = useSelector((state: any) => state.theme);
+   const theme = useSelector((state: IRootState) => state.theme); 
 
     const [show, setShown] = useState<boolean>(false);
 

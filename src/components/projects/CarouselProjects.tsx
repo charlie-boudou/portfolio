@@ -1,7 +1,7 @@
 import Carousel from "react-spring-3d-carousel";
 import React, { useState } from "react";
 import { config } from "react-spring";
-import { IProjectCard } from "../../utils/types";
+import { IProjectCard, IRootState } from "../../utils/types";
 import { useSelector } from 'react-redux';
 
 interface ICarouselProjectsProps {
@@ -9,7 +9,7 @@ interface ICarouselProjectsProps {
 }
 
 function CarouselProjects({ cards }: ICarouselProjectsProps) {
-    const theme = useSelector((state: any) => state.theme);
+   const theme = useSelector((state: IRootState) => state.theme); 
 
     const table = cards.map((element: IProjectCard, index: number) => {
         return { ...element, onClick: () => setGoToSlide(index) };

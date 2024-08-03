@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from 'react-redux';
+import { IRootState } from "../../utils/types";
+import { v4 } from "uuid";
 
 interface IStackInfosProps {
     stacks: string[];
@@ -7,7 +9,7 @@ interface IStackInfosProps {
 }
 
 function StackInfos({ stacks, isCard }: IStackInfosProps): JSX.Element {
-  const theme = useSelector((state: any) => state.theme);
+   const theme = useSelector((state: IRootState) => state.theme); 
 
   return (
     <>
@@ -16,7 +18,7 @@ function StackInfos({ stacks, isCard }: IStackInfosProps): JSX.Element {
         </p>
         <div className={`${isCard ? 'flex-col space-y-[1rem]' : 'items-center space-x-[1rem]'} flex`}>
             {stacks.map((stack: string) => (
-                <div className="rounded-[.5rem] py-[.5rem] px-[1rem] border-[.15rem] w-fit font-bold" style={{color: `${theme.icon}`, borderColor: `${theme.activeIcon}`}}>
+                <div key={v4()} className="rounded-[.5rem] py-[.5rem] px-[1rem] border-[.15rem] w-fit font-bold" style={{color: `${theme.icon}`, borderColor: `${theme.activeIcon}`}}>
                     {stack}
                 </div>
             ))}

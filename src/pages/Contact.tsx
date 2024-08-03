@@ -2,10 +2,11 @@ import React from "react";
 import { useSelector } from 'react-redux';
 import { about } from "../utils/datas";
 import { useTranslation } from 'react-i18next';
+import { IRootState } from "../utils/types";
 
 function Contact(): JSX.Element {
   const { t } = useTranslation();
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   const why = about(t).find((element) => element.name === "why");
 

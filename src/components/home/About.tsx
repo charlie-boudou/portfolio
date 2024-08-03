@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux';
 import { ProjectButton } from "../projects/ProjectButton";
 import { Skills } from "./Skills";
 import { about } from "../../utils/datas";
-import { IAbout } from '../../utils/types';
+import { IAbout, IRootState } from '../../utils/types';
 import { v4 } from "uuid";
 import { useTranslation } from 'react-i18next';
 
 function About(): JSX.Element {
   const { t } = useTranslation();
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   const skillsCardRef = useRef<HTMLDivElement>(null);
 

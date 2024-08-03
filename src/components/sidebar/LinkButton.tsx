@@ -1,5 +1,5 @@
 import React, { cloneElement, useEffect, useState } from 'react';
-import { ISidebarLink } from '../../utils/types';
+import { IRootState, ISidebarLink } from '../../utils/types';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
   
@@ -9,7 +9,7 @@ interface ILinkButtonProps {
 
 function LinkButton({ navLink }: ILinkButtonProps): JSX.Element {
   const location = useLocation();
-  const { theme } = useSelector((state: any) => ({theme: state.theme }));
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   const[pathName, setPathName] = useState<string>('');
 

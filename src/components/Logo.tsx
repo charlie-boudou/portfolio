@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from 'react-redux';
 import { CodeSquare } from "../assets/svgComponents";
+import { IRootState } from "../utils/types";
 
 function Logo(): JSX.Element {
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   return ( 
     <div className={`w-fit flex items-center space-x-[.5rem]`}>

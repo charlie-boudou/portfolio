@@ -2,13 +2,14 @@ import React from "react";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IButton } from "../utils/types";
+import { IRootState } from "../utils/types";
 
 interface IButtonProps {
     link: IButton;
 }
 
   function Button({ link }: IButtonProps) {
-    const theme = useSelector((state: any) => state.theme);
+   const theme = useSelector((state: IRootState) => state.theme); 
 
     const handleClick = (page: string) => {
         window.scrollTo({

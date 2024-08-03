@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { switchTheme } from '../../reducers/theme';
 import { LightIcon } from "../../assets/svgComponents";
+import { IRootState } from "../../utils/types";
 
   function ButtonTheme() {
     const dispatch = useDispatch();
-    const theme = useSelector((state: any) => state.theme);
+   const theme = useSelector((state: IRootState) => state.theme); 
 
     const [isToggle, setIsToggle] = useState<boolean>(false);
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from 'react-redux';
 import { skills } from "../../utils/datas";
-import { IAbout, ISkills, ITechnicalSkills } from '../../utils/types';
+import { IAbout, IRootState, ISkills, ITechnicalSkills } from '../../utils/types';
 import { HandRight, Dot } from "../../assets/svgComponents";
 import { v4 } from "uuid";
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ interface ISkillsProps {
 
 function Skills({ showSkillsCard }: ISkillsProps): JSX.Element {
   const { t } = useTranslation();
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   useEffect(() => {
     if (showSkillsCard) {

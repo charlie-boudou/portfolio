@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux';
-import { IProjectsInfos } from "../../utils/types";
+import { IProjectsInfos, IRootState } from "../../utils/types";
 import { CarouselPictures } from "./CarouselPictures";
 import { ArrowIcon } from '../../assets/svgComponents';
 import { StackInfos } from "./StacksInfos";
@@ -12,7 +12,7 @@ interface IProjectInfosProps {
 
 function ProjectInfos({ infos }: IProjectInfosProps): JSX.Element {
   const { t } = useTranslation();
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   return (
     <div className="h-full w-full px-[1rem] py-[2rem]">

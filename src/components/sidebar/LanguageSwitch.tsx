@@ -2,10 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { France, Uk } from '../../assets/svgComponents';
 import { useSelector } from 'react-redux';
+import { IRootState } from '../../utils/types';
 
 function LanguageSwitch(): JSX.Element {
   const { i18n } = useTranslation();
-  const { theme } = useSelector((state: any) => ({ theme: state.theme }));
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);

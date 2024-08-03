@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux';
 import { ChevronLeft, ChevronRight } from "../../assets/svgComponents";
+import { IRootState } from "../../utils/types";
 
 interface ICarouselPicturesProps {
     pictures: string[];
@@ -8,7 +9,7 @@ interface ICarouselPicturesProps {
 }
 
 function CarouselPictures({ pictures, video }: ICarouselPicturesProps): JSX.Element {
-  const theme = useSelector((state: any) => state.theme);
+ const theme = useSelector((state: IRootState) => state.theme); 
 
   const [index, setIndex] = useState<number>(0);
   const [isVideo, setIsVideo] = useState<boolean>(false);

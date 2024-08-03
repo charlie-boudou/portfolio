@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Logo } from "../components/Logo";
 import { LanguageSwitch } from "../components/sidebar/LanguageSwitch";
+import { IRootState } from "../utils/types";
 
 interface ILayoutProps {
   children: JSX.Element;
 }
 function Layout({ children }: ILayoutProps): JSX.Element {
-  const theme = useSelector((state: any) => state.theme); 
+  const theme = useSelector((state: IRootState) => state.theme); 
 
   return (
     <div className={`md:flex w-full h-full ${theme.backgroundColor}`}>

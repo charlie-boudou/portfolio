@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { useSelector } from 'react-redux';
-import { IProjectsInfos } from "../../utils/types";
+import { IProjectsInfos, IRootState } from "../../utils/types";
 import { ArrowIcon } from '../../assets/svgComponents';
 
 interface IProjectButtonProps {
@@ -11,7 +11,7 @@ interface IProjectButtonProps {
 }
 
   function ProjectButton({ title, infos, setShowCard, setProjectInfos }: IProjectButtonProps) {
-    const theme = useSelector((state: any) => state.theme);
+    const theme = useSelector((state: IRootState) => state.theme); 
 
     const handleClick = async() => {
         await setShowCard(true);

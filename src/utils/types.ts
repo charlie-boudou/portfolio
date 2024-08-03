@@ -8,6 +8,10 @@ export interface IThemeState {
     textProjectButton: string;
     textContact: string;
 }
+
+export interface IRootState {
+    theme: IThemeState;
+}
   
 export type ISidebarLink = {
     name: string;
